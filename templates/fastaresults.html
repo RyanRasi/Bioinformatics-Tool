@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<!-- container-fluid -->
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<div class="container-fluid">
+	<div class="container theme-showcase" role="main">
+    
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10" style="background-color:#e9ecef">
+			<h4>Record Description is: {{recordD}}</h4>
+			<h4>{{matches}} Matches were found</h4>
+			<br>
+			<table class="table table-bordered table-striped text-center">
+		
+	{% for key,value in result.items() %}
+	<tr>
+		<th>
+			{{key}}
+		</th>
+		<th>
+			{{value}}
+		</th>
+	</tr>
+	{% endfor %}
+</table>
+{{noResult}}
+</div>
+<div class="col-md-1">
+</div>
+</div>
+<br>
+<div class="row">
+			<div class="col-md-1">
+		</div>
+		<div class="col-md-10" style="background-color:#e9ecef">
+			<h5>Understanding the results</h5>
+			<p>3 pieces of data are revealed. The number of matches found, the motifs and the positions of the motifs.</p>
+			<p>The first column is the motifs that were found and the second motif are the positions of the motifs.</p>
+</div>
+<div class="col-md-1">
+</div>
+	</div>
+</div>
+</div>
+
+
+{% endblock %}

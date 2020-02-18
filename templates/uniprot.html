@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Uniprot Page{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for msg in messages %}
+			<p> {{msg}} </p>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+<div class="container theme-showcase" role="main">
+    
+  <div class="row">
+  	<div class="col-md-1">
+  	</div>
+  	<div class="col-md-10" style="background-color:#e9ecef">
+  	<h5>Please enter a Uniprot Accession Code (e.g. P10636)</h5>
+   	<form action="#" method="POST">
+	<p>
+		{{form.UAC.label}} <br>
+		{{form.UAC(size=30)}}
+	</p>
+		<p>
+		{{form.email.label}} <br>
+		{{form.email(size=30)}}
+	</p>
+	<p>{{form.submit()}}</p>
+</form>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+  </div>
+</div>
+{% endblock %}

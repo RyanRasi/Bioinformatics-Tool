@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}About Page{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for msg in messages %}
+			<p> {{msg}} </p>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+<div class="container theme-showcase">
+<br>
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10" style="background-color:#e9ecef">
+<h4>How to use the tool?</h4>
+<br>
+<h5>If you have the Uniprot Accession Code</h5>
+<p>Simply click on the "Uniprot Accession Code" tool link in the navbar and enter your Uniprot Accession Code into the text field and click submit. The page will then display the results of the matched motifs, the positions and the amount of matches.</p>
+<br>
+<h5>If you have the FASTA format code</h5>
+<p>Simply click on the "FASTA Format" tool link in the navbar and enter your Fasta Format Code into the text field and click submit. The page will then display the results of the matched motifs, the positions and the amount of matches.</p>
+
+<h4>How it works?</h4>
+<br>
+<p>Once the user has inputed their submission (e.g. Uniprot Accession Code or the FASTA format code, then the software programmed with Python will run a regular expression on this. If the submission is via a Uniprot code then the Uniprot server will be contacted and the relevant FASTA code for the Uniprot code will be retrieved. If an error occurs due to contacting the server then the page is refreshed for the user to reattempt data entry.</p>
+
+<h5>The regular expression is as follows...</h5>
+<h5>[^P][^PKRHW][VLSWFNQ][ILTYWFN][FIY][^PKRH]</h5>
+<h6>Key: ^ - Means to not include the following character, [] - Means any of the included characters within the brackets</h6>
+<p>The resulting matches are then ran through a for loop to discover their positions and add the motif and positions to a dictionary to later be output via a table.</p>
+
+</div>
+<div class="col-md-1">
+	</div>
+</div>
+
+</div>
+{% endblock %}

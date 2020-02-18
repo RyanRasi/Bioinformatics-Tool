@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}FASTA Page{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for msg in messages %}
+			<p> {{msg}} </p>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+<div class="container theme-showcase" role="main">
+    
+  <div class="row">
+  	<div class="col-md-1">
+  	</div>
+  	<div class="col-md-10" style="background-color:#e9ecef">
+			<h5>Please enter a FASTA format sequence</h5>
+			<h5>(e.g.</h5>
+<h6>
+			>sp|P10997|IAPP_HUMAN Islet amyloid polypeptide OS=Homo sapiens OX=9606 GN=IAPP PE=1 SV=1
+			MGILKLQVFLIVLSVALNHLKATPIESHQVEKRKCNTATCATQRLANFLVHSSNNFGAIL
+			SSTNVGSNTYGKRNAVEVLKREPLNYLPL
+			</h6>
+			<h5>)</h5>
+   	<form action="#" method="POST">
+	<p>
+		{{form.FASTA.label}} <br>
+		{{form.FASTA(cols="75", rows="5")}}
+	</p>
+	<p>
+		{{form.email.label}} <br>
+		{{form.email(size=30)}}
+	</p>
+	<p>{{form.fastaSubmit()}}</p>
+</form>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+  </div>
+</div>
+{% endblock %}

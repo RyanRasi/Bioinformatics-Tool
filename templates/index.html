@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for msg in messages %}
+			<p> {{msg}} </p>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+
+<div class="container theme-showcase">
+<br>
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10" style="background-color:#e9ecef">
+			<h5>This bioinformatics tool searches for sequence motifs in proteins.</h5>
+			<p>Matches motifs, including the sequence and position of the motif is displayed in tables or is sent via email.</p>
+			<p>Please select the type of input you wish to execute in the navbar at the top of the webpage. (e.g. Uniprot Accession Code or FASTA format)</p>
+</div>
+<div class="col-md-1">
+</div>
+	</div>
+</div>
+
+
+{% endblock %}
