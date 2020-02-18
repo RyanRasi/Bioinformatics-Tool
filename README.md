@@ -19,6 +19,7 @@ The language used to implement this tool is Python and the libraries of Biopytho
 This tool is accessible online at http://142.93.44.105:5000/uniprot
 **Local Access**
 Alternatively, you can run this web server locally. To do this, download the project folder and ensure you have Python 3 installed. To check if you have Python installed run “python --version” in the terminal, if the command is not found then please go to the python website to download it.Running a virtual environment is up to the user’s discretion to ensure that the dependencies of this project are isolated from the dependencies of other projects.This project depends on libraries which can be installed through the terminal in the project folder. The command to run is “pip install [The Library]” replacing [The Library] with each of the following one by one, “flask”, “wtforms”, “Flask-WTF”, “numpy”, “biopython”.
+
 **Libraries to install**
 
  - [ ] flask
